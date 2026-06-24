@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Proptech Feed
+
+A real estate social feed UI built with Next.js 16, Tailwind CSS, and TypeScript. Designed to mimic a property-focused social platform where users can browse listings, general updates, and requests from agents, developers, and individuals.
+
+## Features
+
+- **Feed** — Infinite-scrolling post feed with mock data (500+ posts). Supports property listings, general posts, and requests
+- **Post Cards** — Each card shows user info, listing type badge, category badge, location, media (images/video), likes, comments, and bookmarks
+- **Media Carousel** — Multi-image/video support with prev/next navigation and dot indicators
+- **Stories** — Horizontally scrollable story avatars with left/right scroll controls
+- **Feed Composer** — Post creation UI with tabs (Property, General, Request), textarea, location tag, and post button
+- **Filters sidebar** — Quick-access links (Messages, Boosts, Saved, Communities) and filter dropdowns (Location, Listing Type, Budget, User Type)
+- **Trends sidebar** — Trending locations, hot requests, and top communities panels
+- **Navbar** — Fixed top nav with route-aware active link highlighting
+- **Layout** — Navbar is fixed; only the feed column scrolls; sidebars stay pinned
+
+## Tech Stack
+
+- [Next.js 16](https://nextjs.org) (App Router)
+- [TypeScript](https://www.typescriptlang.org)
+- [Tailwind CSS v3](https://tailwindcss.com) with a custom design token config
+- [React Hook Form](https://react-hook-form.com)
+- Custom local fonts: OpenRunde & SF Rounded
+
+## Project Structure
+
+```
+src/
+├── app/
+│   ├── (public_pages)/
+│   │   ├── _components/     # All page-level UI components
+│   │   ├── layout.tsx        # Fixed navbar + scrollable main
+│   │   └── page.tsx          # Three-column grid layout
+│   └── layout.tsx            # Root layout with font setup
+├── components/               # Shared primitives (Button, Textarea, Wrapper…)
+├── icons/                    # Custom SVG icon components
+├── styles/
+│   ├── fonts/                # Local woff2 font files
+│   └── globals.css
+├── types/                    # Shared TypeScript interfaces (Post, Story, MediaItem…)
+└── utils/
+    ├── index.ts              # cn() helper, formatDate
+    └── mock-data.ts          # 500+ generated mock posts and stories
+```
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the app.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Design Tokens
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Colors, font sizes, and shadows are defined in `tailwind.config.ts`. All UI components use only the tokens defined there — no arbitrary color values.
