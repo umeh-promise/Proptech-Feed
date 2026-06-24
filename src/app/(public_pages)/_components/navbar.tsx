@@ -1,6 +1,6 @@
 "use client";
 
-import { Fragment, useCallback } from "react";
+import { Fragment, useCallback, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Button } from "@/src/components/button";
@@ -56,6 +56,7 @@ const bottomTabs = [
 
 export default function Navbar() {
   const pathname = usePathname();
+  const [mobileOpen, setMobileOpen] = useState(false);
   const homeRoute = navLinks[0].href;
 
   const activeNav = useCallback(
@@ -95,17 +96,74 @@ export default function Navbar() {
             ))}
           </ul>
 
+          {/* Desktop actions */}
           <div className="hidden items-center gap-[2.4rem] lg:flex">
             <NotificationIcon />
             <Link href="/">List Property</Link>
             <Button>Sign In</Button>
           </div>
 
-          <div className="flex items-center gap-[1.6rem] lg:hidden">
-            <NotificationIcon />
+          {/* Mobile: ghost Sign In + hamburger */}
+          <div className="flex items-center gap-[1.8rem] lg:hidden">
+            <Button variant="ghost" className="border-transparent px-0 text-sm">
+              Sign In
+            </Button>
+            <button
+              type="button"
+              aria-label="Toggle menu"
+              onClick={() => setMobileOpen((o) => !o)}
+              className="flex flex-col gap-[.5rem] p-[.4rem]"
+            >
+              <span
+                className={cn(
+                  "block h-[2px] w-[2.2rem] bg-grey-100 transition-all duration-200",
+                  { "translate-y-[.7rem] rotate-45": mobileOpen },
+                )}
+              />
+              <span
+                className={cn(
+                  "block h-[2px] w-[2.2rem] bg-grey-100 transition-all duration-200",
+                  { "opacity-0": mobileOpen },
+                )}
+              />
+              <span
+                className={cn(
+                  "block h-[2px] w-[2.2rem] bg-grey-100 transition-all duration-200",
+                  { "-translate-y-[.7rem] -rotate-45": mobileOpen },
+                )}
+              />
+            </button>
           </div>
         </Wrapper>
       </header>
+
+      {/* Mobile slide-down menu */}
+      {mobileOpen && (
+        <div className="fixed inset-x-0 top-[6.4rem] z-50 border-t border-white/[6%] bg-dark-100 shadow-lg lg:hidden">
+          <ul className="flex flex-col px-[2.4rem] py-[1.2rem]">
+            {navLinks.map((link) => (
+              <li key={link.title}>
+                <Link
+                  href={link.href}
+                  onClick={() => setMobileOpen(false)}
+                  className={cn(
+                    "flex items-center justify-between gap-[.4rem] py-[1.2rem] text-grey-100 transition-colors hover:text-white",
+                    { "font-medium text-light-grey-100": activeNav(link) },
+                  )}
+                >
+                  {link.title}
+                  {link.children && <ChevronDownIcon />}
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <div className="border-t border-white/[6%] px-[2.4rem] py-[1.6rem]">
+            <Button className="w-full" onClick={() => setMobileOpen(false)}>
+              Sign In
+            </Button>
+          </div>
+        </div>
+      )}
 
       <button
         type="button"
