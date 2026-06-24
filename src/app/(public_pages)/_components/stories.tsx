@@ -63,7 +63,7 @@ export default function Stories() {
 
       <div
         ref={scrollContainerRef}
-        className="no-scrollbar flex items-center gap-4 overflow-x-auto scroll-smooth px-0.5 py-1.5"
+        className="no-scrollbar flex items-center gap-4 overflow-x-auto scroll-smooth px-[.12rem] py-[.4rem]"
       >
         {stories.map((story) => (
           <figure

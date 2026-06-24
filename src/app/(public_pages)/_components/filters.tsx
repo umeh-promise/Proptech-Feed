@@ -25,35 +25,37 @@ const bottomFilters = [
 
 export default function Filters() {
   return (
-    <section className="flex flex-col gap-[2.4rem]">
-      <CardWrapper>
-        <ul className="flex flex-col">
-          {topFilters.map((filter) => (
-            <li
-              key={filter.id}
-              className="flex cursor-pointer items-center gap-[.8rem] px-[1.6rem] py-[1.2rem] text-grey-100 transition-colors duration-150 hover:text-white"
-            >
-              {filter.icon} {filter.name}
-            </li>
-          ))}
-        </ul>
-      </CardWrapper>
-      <CardWrapper className="px-0">
-        <ul className="flex w-full flex-col divide-y-[1px] divide-grey-100/[6%]">
-          {bottomFilters.map((filter) => (
-            <li
-              key={filter.id}
-              className="flex w-full cursor-pointer items-center justify-between gap-[.8rem] px-[1.6rem] py-[1.2rem] transition-colors duration-150 hover:text-white"
-            >
-              {filter.name} <ChevronDownIcon />
-            </li>
-          ))}
-        </ul>
-      </CardWrapper>
+    <aside className="hidden lg:sticky lg:top-0 lg:block lg:h-dvh lg:overflow-y-auto lg:py-[3.2rem]">
+      <section className="flex flex-col gap-[2.4rem]">
+        <CardWrapper>
+          <ul className="flex flex-col">
+            {topFilters.map((filter) => (
+              <li
+                key={filter.id}
+                className="flex cursor-pointer items-center gap-[.8rem] px-[1.6rem] py-[1.2rem] text-grey-100 transition-colors duration-150 hover:text-white"
+              >
+                {filter.icon} {filter.name}
+              </li>
+            ))}
+          </ul>
+        </CardWrapper>
+        <CardWrapper className="px-0">
+          <ul className="flex w-full flex-col divide-y-[1px] divide-grey-100/[6%]">
+            {bottomFilters.map((filter) => (
+              <li
+                key={filter.id}
+                className="flex w-full cursor-pointer items-center justify-between gap-[.8rem] px-[1.6rem] py-[1.2rem] transition-colors duration-150 hover:text-white"
+              >
+                {filter.name} <ChevronDownIcon />
+              </li>
+            ))}
+          </ul>
+        </CardWrapper>
 
-      <Button className="font-openRunde hidden py-[.8rem] lg:flex">
-        <PlusIcon /> Create Post
-      </Button>
-    </section>
+        <Button className="font-openRunde hidden py-[.8rem] lg:flex">
+          <PlusIcon /> Create Post
+        </Button>
+      </section>
+    </aside>
   );
 }
