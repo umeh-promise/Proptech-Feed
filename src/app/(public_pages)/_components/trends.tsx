@@ -1,6 +1,7 @@
-import { UsersIcon, MapPinIcon, FireIcon } from "@/src/icons";
+import { UsersIcon, MapPinIcon } from "@/src/icons";
 import CardWrapper from "./card-wrapper";
 import { ArrowRightIcon } from "@/src/icons/arrow-right";
+import { FlameIcon } from "lucide-react";
 
 const trendingLocations = [
   { name: "Lekki Epe", posts: "120 post today" },
@@ -33,7 +34,7 @@ const topCommunities = [
 
 export default function Trends() {
   return (
-    <section className="sticky top-0 flex h-dvh flex-col gap-[2.4rem] overflow-y-auto py-[3.2rem]">
+    <section className="flex flex-col gap-[2.4rem]">
       <CardWrapper className="flex-col gap-[1.6rem] px-[1.6rem]">
         <header className="flex items-center gap-[.8rem]">
           <MapPinIcon className="text-yellow-100" />
@@ -59,7 +60,7 @@ export default function Trends() {
       </CardWrapper>
       <CardWrapper className="flex-col gap-[.8rem] px-[1.6rem]">
         <header className="flex items-center gap-[.8rem]">
-          <FireIcon />
+          <FlameIcon className="text-yellow-100" />
           <h4 className="font-medium text-light-grey-100">
             Trending Locations
           </h4>

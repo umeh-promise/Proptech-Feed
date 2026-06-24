@@ -12,11 +12,15 @@ export default function Home() {
   return (
     <Wrapper
       fluid={false}
-      className="grid h-full grid-cols-[24rem_1fr_24rem] gap-[4rem]"
+      className="grid h-full grid-cols-1 gap-[2.4rem] lg:grid-cols-[24rem_1fr] xl:grid-cols-[24rem_1fr_24rem] xl:gap-[4rem]"
     >
-      <Filters />
+      <aside className="hidden lg:sticky lg:top-0 lg:block lg:h-dvh lg:overflow-y-auto lg:py-[3.2rem]">
+        <Filters />
+      </aside>
       <Feed />
-      <Trends />
+      <aside className="hidden xl:sticky xl:top-0 xl:block xl:h-dvh xl:overflow-y-auto xl:py-[3.2rem]">
+        <Trends />
+      </aside>
     </Wrapper>
   );
 }

@@ -88,7 +88,7 @@ export default function PostCard({ post }: { post: Post }) {
           type="button"
           className="flex items-center gap-[.4rem] transition-colors hover:text-white"
         >
-          <CommentIcon /> {post.commentsCount}
+          <CommentIcon variant="full" /> {post.commentsCount}
         </button>
         <button
           type="button"

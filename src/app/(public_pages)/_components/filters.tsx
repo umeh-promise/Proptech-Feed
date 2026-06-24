@@ -25,7 +25,7 @@ const bottomFilters = [
 
 export default function Filters() {
   return (
-    <section className="sticky top-0 flex h-dvh flex-col gap-[2.4rem] overflow-y-auto py-[3.2rem]">
+    <section className="flex flex-col gap-[2.4rem]">
       <CardWrapper>
         <ul className="flex flex-col">
           {topFilters.map((filter) => (
