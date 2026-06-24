@@ -34,7 +34,7 @@ const topCommunities = [
 
 export default function Trends() {
   return (
-    <aside className="no-scrollbar hidden xl:sticky xl:top-0 xl:block xl:h-dvh xl:overflow-y-auto xl:py-[3.2rem]">
+    <aside className="no-scrollbar hidden xl:sticky xl:top-0 xl:block xl:h-dvh xl:overflow-y-auto xl:py-[3.2rem] xl:pb-[10rem]">
       <section className="flex flex-col gap-[2.4rem]">
         <CardWrapper className="flex-col gap-[1.6rem] px-[1.6rem]">
           <header className="flex items-center gap-[.8rem]">
