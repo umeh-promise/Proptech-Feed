@@ -1,14 +1,15 @@
 "use client";
 
 import { Button } from "@/src/components/button";
-import { BuildingIcon, CommentIcon, InboxIcon, MapPinIcon } from "@/src/icons";
+import { CommentIcon, InboxIcon, MapPinIcon } from "@/src/icons";
 import CardWrapper from "./card-wrapper";
 import { cn } from "@/src/utils";
 import { Textarea } from "@/src/components/textarea";
 import Image from "next/image";
+import { Building2Icon } from "lucide-react";
 
 const tabs = [
-  { label: "Property", icon: <BuildingIcon /> },
+  { label: "Property", icon: <Building2Icon /> },
   { label: "General", icon: <CommentIcon /> },
   { label: "Request", icon: <InboxIcon /> },
 ] as const;
