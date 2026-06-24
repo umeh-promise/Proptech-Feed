@@ -17,7 +17,9 @@ export default function Home() {
       <aside className="hidden lg:sticky lg:top-0 lg:block lg:h-dvh lg:overflow-y-auto lg:py-[3.2rem]">
         <Filters />
       </aside>
-      <Feed />
+      <div className="pb-[8rem] pt-[2.4rem] lg:pb-0 xl:h-dvh xl:overflow-y-auto xl:py-[3.2rem]">
+        <Feed />
+      </div>
       <aside className="hidden xl:sticky xl:top-0 xl:block xl:h-dvh xl:overflow-y-auto xl:py-[3.2rem]">
         <Trends />
       </aside>

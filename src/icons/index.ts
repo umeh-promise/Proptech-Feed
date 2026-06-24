@@ -15,4 +15,8 @@ export { CheckFillIcon } from "./check-fill";
 export { HeartIcon } from "./heart";
 export { SendIcon } from "./send";
 export { TagIcon } from "./tag";
+export { HomeIcon } from "./home";
+export { SearchIcon } from "./search";
+export { PlusAppIcon } from "./plus-app";
+export { ProfileIcon } from "./profile";
 // export {} from "./";

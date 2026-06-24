@@ -51,7 +51,7 @@ export default function Filters() {
         </ul>
       </CardWrapper>
 
-      <Button className="font-openRunde py-[.8rem]">
+      <Button className="font-openRunde hidden py-[.8rem] lg:flex">
         <PlusIcon /> Create Post
       </Button>
     </section>
